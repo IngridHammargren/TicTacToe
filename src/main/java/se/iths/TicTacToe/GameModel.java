@@ -6,7 +6,7 @@ import javafx.scene.control.Alert;
 
 import java.util.Random;
 
-public class Model {
+public class GameModel {
 
     private final char[][] board;
     private char activePlayer;
@@ -14,8 +14,7 @@ public class Model {
     private int playerXScore = 0;
     private int playerOScore = 0;
 
-
-    public Model() {
+    public GameModel() {
         board = new char[3][3];
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 3; col++) {
@@ -110,9 +109,7 @@ public class Model {
     }
 
 
-    public void showResult(String message, HelloController controller) {
-
-
+    public void showResult(String message, GameController controller) {
 
 
         System.out.println("Received message: " + message);
@@ -122,18 +119,17 @@ public class Model {
         alert.setHeaderText(null);
         alert.setContentText(message);
 
-        if (message.contains("X wins")) {
+        if (message.startsWith("X")) {
             playerXScore++;
-            System.out.println("Player X Score: "+playerXScore);
 
-        } else if (message.contains("O wins")) {
+
+        } else if (message.startsWith("O")) {
             playerOScore++;
-            System.out.println("Player O Score; "+playerOScore);
+
 
         }
         alert.showAndWait();
         controller.updateScoreLabel();
-
 
 
     }
