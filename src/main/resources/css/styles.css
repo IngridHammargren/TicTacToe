@@ -1,0 +1,21 @@
+/* För att stila knappar */
+.button {
+    -fx-background-color: #3498db; /* Bakgrundsfärg */
+    -fx-text-fill: #ffffff; /* Textfärg */
+    -fx-font-size: 14px; /* Textstorlek */
+    -fx-padding: 10px 20px; /* Kudde (padding) runt texten */
+}
+
+/* För att stila etiketter (labels) */
+.label {
+    -fx-font-size: 16px; /* Textstorlek */
+    -fx-text-fill: #333333; /* Textfärg */
+}
+
+/* För att stila ditt rutnät (grid) */
+.grid-pane {
+    -fx-hgap: 10px; /* Horisontell avstånd mellan element */
+    -fx-vgap: 10px; /* Vertikal avstånd mellan element */
+}
+
+/* Anpassa färger och stilar efter ditt behov */
