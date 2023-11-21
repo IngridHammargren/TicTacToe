@@ -9,50 +9,50 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ModelTest {
 
-   private Model model;
+   private GameModel gameModel;
 
     @BeforeEach
     public void setUp(){
-        model = new Model();
+        gameModel = new GameModel();
     }
 
     @Test
     void testValidMove() {
-        assertEquals('X', model.getActivePlayer());
+        assertEquals('X', gameModel.getActivePlayer());
     }
 
     @Test
     void testInvalidMove() {
-        assertFalse(model.makeMove(0, 0));
+        assertFalse(gameModel.makeMove(0, 0));
     }
 
     @Test
     void testWin() {
-        Model model = new Model();
-        model.makeMove(0, 0);
-        model.makeMove(1, 1);
-        model.makeMove(0, 1);
-        model.makeMove(1, 2);
-        model.makeMove(0, 2);
+        GameModel gameModel = new GameModel();
+        gameModel.makeMove(0, 0);
+        gameModel.makeMove(1, 1);
+        gameModel.makeMove(0, 1);
+        gameModel.makeMove(1, 2);
+        gameModel.makeMove(0, 2);
 
-        assertTrue(model.checkWin());
+        assertTrue(gameModel.checkWin());
     }
 
     @Test
     void testDraw() {
-        Model model = new Model();
+        GameModel gameModel = new GameModel();
 
-        model.makeMove(0, 0);
-        model.makeMove(0, 1);
-        model.makeMove(0, 2);
-        model.makeMove(1, 0);
-        model.makeMove(1, 2);
-        model.makeMove(1, 1);
-        model.makeMove(2, 0);
-        model.makeMove(2, 2);
-        model.makeMove(2, 1);
+        gameModel.makeMove(0, 0);
+        gameModel.makeMove(0, 1);
+        gameModel.makeMove(0, 2);
+        gameModel.makeMove(1, 0);
+        gameModel.makeMove(1, 2);
+        gameModel.makeMove(1, 1);
+        gameModel.makeMove(2, 0);
+        gameModel.makeMove(2, 2);
+        gameModel.makeMove(2, 1);
 
-        assertTrue(model.checkDraw());
+        assertTrue(gameModel.checkDraw());
     }
 
 
